@@ -1,0 +1,108 @@
+.wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    .inner {
+        max-width: 1600px;
+        background-color: #191d30;
+        width: 100%;
+        height: 100%;
+        padding: 25px 0;
+    }
+    .case-track {
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        padding-bottom: 20px;
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 150px;
+            background: linear-gradient(90deg, #131625, rgba(19, 22, 37, 0));
+            top: 0;
+            bottom: 0;
+            z-index: 2;
+            height: 100%;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            width: 150px;
+            background: linear-gradient(90deg, #131625, rgba(19, 22, 37, 0));
+            top: 0;
+            bottom: 0;
+            z-index: 2;
+            height: 100%;
+            transform: matrix(-1, 0, 0, 1, 0, 0);
+        }
+        &__inner {
+            height: 150px;
+            display: flex;
+            position: relative;
+            gap: 15px;
+            transition: all 8s cubic-bezier(0.23, 0.78, 0.29, 1);
+        }
+        &__card {
+            padding: 10px;
+            background-color: #262d52;
+            width: 150px;
+            height: 100%;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        &__pointer {
+            width: 15px;
+            height: 30px;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            bottom: 5px;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+    }
+}
+
+//
+.flip {
+    transform-style: preserve-3d;
+    transition: all 0.6s ease-in-out;
+    cursor: pointer;
+    width: 200px;
+    height: 300px;
+    background-color: #ccc;
+    position: relative;
+
+    &__front {
+        transform: rotateY(0deg);
+        transition: all 0.6s ease-in-out;
+        backface-visibility: hidden;
+        z-index: 2;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__back {
+        transform: rotateY(180deg);
+        width: 100%;
+        height: 100%;
+        transition: all 0.6s ease-in-out;
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &.flipped {
+        transform: translateX(-100%) rotateY(180deg);
+        transform-origin: right center;
+    }
+}

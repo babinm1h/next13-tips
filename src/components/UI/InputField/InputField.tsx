@@ -2,7 +2,7 @@ import { TextField, TextFieldProps } from "@mui/material";
 import React, { FC } from "react";
 import InputMask, { Props } from "react-input-mask";
 
-const InputField: FC<TextFieldProps & { mask?: string }> = ({ type = "text", ...props }) => {
+const InputField: FC<TextFieldProps & { mask?: string }> = React.memo(({ type = "text", ...props }) => {
   const { className, mask, value, onChange, name, onBlur, error, helperText } = props;
   return mask ? (
     // @ts-ignore
@@ -42,6 +42,6 @@ const InputField: FC<TextFieldProps & { mask?: string }> = ({ type = "text", ...
       type={type}
     />
   );
-};
+});
 
 export default InputField;

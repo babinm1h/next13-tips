@@ -1,0 +1,45 @@
+.range {
+    &__wrapper {
+        height: 24px;
+        width: 100%;
+        position: relative;
+        cursor: pointer;
+        user-select: none;
+        &::after {
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            border-radius: 2px;
+            background-color: #ccc;
+            transform: translateY(-50%);
+        }
+    }
+    &__fill {
+        width: 0%;
+        background-color: #2688eb;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        z-index: 1;
+        height: 2px;
+    }
+
+    &__thumb {
+        width: 24px;
+        height: 24px;
+        background-color: #2688eb;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(-10px, -50%);
+        z-index: 2;
+        cursor: pointer;
+    }
+    &__track {
+    }
+}

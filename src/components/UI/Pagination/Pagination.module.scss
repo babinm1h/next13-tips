@@ -1,0 +1,66 @@
+.pageButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    color: #000;
+
+    &:hover {
+        text-decoration: none;
+
+        color: #000;
+    }
+}
+
+.pagination {
+    //
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-weight: 500;
+    gap: 20px;
+}
+
+.pages {
+    display: flex;
+    flex-grow: 1;
+    user-select: none;
+}
+
+.pageButtonActive {
+    font-weight: 700;
+}
+
+.hidden {
+    visibility: hidden;
+}
+.activePage {
+    background-color: $primaryBlue;
+    color: #fff;
+}
+.page {
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid $primaryBlue;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow {
+    border: 1px solid rgba(#000, 0.5);
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+        box-sizing: border-box;
+
+        color: #000;
+        border: 1px solid #ccc;
+        background-color: transparent;
+    }
+}

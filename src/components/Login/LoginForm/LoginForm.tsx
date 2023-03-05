@@ -3,7 +3,7 @@ import * as yup from "yup";
 import { useFormik } from "formik";
 import { VALIDATION_MESSAGES } from "@src/constants/validationMessages";
 import { getMaxMessage, getMinMessage } from "@src/helpers/validateHelpers";
-import InputField from "@components/UI/TextField/TextField";
+import InputField from "@components/UI/InputField/InputField";
 import { Button } from "@mui/material";
 import Link from "next/link";
 import st from "./LoginForm.module.scss";
